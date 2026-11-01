@@ -1,0 +1,71 @@
+High-level description
+
+Design a modern e-commerce analytics dashboard (desktop) similar to “SellPilot,” focused on clarity, speed, and at-a-glance insights.
+
+
+Look & Feel (buzzwords)
+
+World-class, ultra-clean layout; airy spacing; soft shadows; rounded-2xl cards; subtle glass/blur on toolbar; gentle hover elevation; calm, confident; data-dense yet breathable. Micro-interactions: 150–250ms transitions, count-up numerals, staggered card fade-ins, bar-chart grow from baseline, value chips pop/scale, date-picker scale-fade, icon buttons with tooltip + tap ripple, skeleton shimmer on load.
+
+
+Brand (colors, font)
+
+Use “Inter” (or Geist fallback). Tight headings and numerals with slight negative tracking.
+
+– Background: #F6F7FB
+
+– Surface (cards): #FFFFFF
+
+– Borders: #E9EEF5
+
+– Headings/Text: #0F172A
+
+– Muted text: #6B7280
+
+– Primary accent (violet): #6C5CE7 (chart/bar/CTAs)
+
+– Success: #22C55E
+
+– Danger: #EF4444
+
+– Info: #3B82F6
+
+– Neutral badge bg: #F3F4F6
+
+Typography: H1 24–28/32, H2 18–20/28, body 14–16/24; numerals tabular; letter-spacing −0.2px to −0.5px on big numbers. White-mode first.
+
+
+UI Library
+
+React + Tailwind + shadcn/ui components. Icons: lucide-react.
+
+Charts: Recharts (rounded columns, grid, tooltip).
+
+Map: react-simple-maps (world map with dotted pattern + colored location dots).
+
+Table: TanStack Table (sorting, sticky header, checkbox select).
+
+Date range: shadcn DateRangePicker (react-day-picker in a Popover).
+
+Animations: Framer Motion; numerals via CountUp.js; tailwindcss-animate for utilities.
+
+
+Page/Component Details
+
+Layout: Fixed left sidebar (260px) with section headers “Menu / Products / General”; active nav as dark pill (#0B0D12) with white text and icon, other items neutral; small purple count badges on some items.
+
+Top bar: rounded full search input with leading search icon and placeholder 'Search product'; right cluster with date-range pill (calendar icon), theme toggle, bell, settings, and user avatar + menu; toolbar uses light blur and soft shadow.
+
+KPI row (4 cards): 'Total Sales', 'New Customer', 'Return Products', 'Total Revenue'. Each card shows big metric (tabular numerals, tracking −0.5), tiny icon in top-right, 'Last month' caption, and a delta chip (green ↑ for positive, red ↓ for negative).
+
+Revenue Analytics card: weekly column chart with faint striped placeholder bars; highlight one bar (e.g., Sun) as solid primary violet with a rounded top and a floating value pill; secondary control 'This Week' as ghost button with chevron.
+
+Growth by Country card: dotted world map with 4–5 colored location dots (violet, pink, green, gray); legend row with tiny flag + label + percentage (USA 35%, UK 28%, BD 24%, UAE 13%).
+
+Recent Orders table card: top row has search input (left) and 'Sort by' dropdown (right); table columns: checkbox, Order ID, Date, Customer, Category, Status (badges: 'Pending' soft amber, 'Completed' soft green), Items, Total; sticky header, zebra rows, pagination footer.
+
+General polish: 24px gutters, card padding 20–24px, rounded-2xl corners, shadow [0 4px 24px rgba(17,24,39,0.06)], focus rings visible, icons at 18–20px, responsive up to xl/2xl widths, consistent empty-state and loading skeletons.
+
+
+⚡ Also build all pages linked in the sidebar (Dashboard, Analytics, Insights, Updates, Customers, Store, Discounts, Integration, Feedback, Settings, Help Desk) with matching design language, layout, and component style.
+
